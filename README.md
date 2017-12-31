@@ -2,6 +2,8 @@
 
 A website for my Star Citizen Org. Displays Star Citizen time.
 
+![Terra-Nova Website](/terra-nova.png)
+
 ## Errors
 
 Currently you need to edit the app.css file after the page loads
