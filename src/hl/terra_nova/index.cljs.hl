@@ -1,0 +1,51 @@
+(page "index.html"
+  (:require
+    [terra-nova.rpc :as rpc]))
+
+(rpc/init)
+
+(html
+  (head
+   (title "Terra-Nova")
+   (link :href "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" :rel"stylesheet")
+   (link :href "https://fonts.googleapis.com/css?family=Play|Wallpoet|Iceberg" :rel "stylesheet")
+   (link :href "/public/app.css" :rel "stylesheet"))
+  
+  (body
+   (div :class "container-fluid"
+        (div :class "row"
+             (div :class "col-sm-4")
+             (div :class "col-sm-4 header"
+                  (h1 "T-N Inc."
+                      (img :src "img/logo.png" :width "70px"))
+                  (h3 "E|S|T = Dominion of Terra-Nova")))
+                  ;; (h3 "Delivering whatever is wanted.")))
+                  
+        (div :class "row"
+             (div :class "col-sm-3 main"
+                  (h2 "Adventurer,")
+                  (h3 "Mission")
+                  (p "Here, on the frontiers of space, technology, science, research, optimism, and profit, Terra-Nova excels in every area it touches. We only hire the best, we strive to be the best, and we are a top ten employer in the UEE.")
+                  (h3 "Team")
+                  (p "Our core team consists of people with varied backgrounds, they come together under one symbolic roof to advance the human condition, because, at the end of the day, every citizen in the UEE knows Terra-Nova's name.")
+                  (h3 "Difference")
+                  (p "From our blend of the finest coffee, to the artifacts we recover daily, and even our own 'Earth, year 2100's' theme park we make change. If you think you have what it takes, apply today, there are always openings.  Like they say, 'The UEE glows brighter, everyday.'")
+                  (h2 "Needed")
+                  (h3 "Military")
+                  (p "Strong, weak, or just plain indifferent to suffering,  Terra-Nova is always looking for those enough who love to fight. Fight with guns and spaceships, or even words. If you think you have what it takes, apply today.")
+                  (h3 "Exploration")
+                  (p "There is always more to be discovered, as Einstein said, 'the atom is the last frontier', but boy was he wrong. Now we are venturing out further than ever before, there is minerals, species, and stuff people eat in systems that are being discovered all the time. We don't think there is an end to the edges of space, just not enough people to take up the race.")
+                  (h3 "Science")
+                  (p "When caveman first discovered lightning, it was an anomaly. Current philosophers thought it must be a sign from ... anyways more to the point, Science is fun, it creates, it leads to anything that can be. Without it, we would never have made fire, never been to Alpha Centurion or beyond. It improves lives and helps in lots of ways. We do Science in our own special way.")
+                  (h3 "Mining")
+                  (p "Who doesn't like a nice wedding ring, a new piece of body armor, or a ship that doesn't fall apart. All these things are because we mine. That is right, humanity mines the galaxy always on the lookout for the next big dig. There are currently mining operations in over one hundred systems and we strive to be underneath, getting all that sweet minerals.")
+                  (h3 "Research")
+                  (p "When research is done right, society becomes better. It improves in mysterious ways because we research the future. Lots of our work is Top Secret, although, much of it eventually trickles down into actual products. Love the lab? Like to conjoin new ideas? The Terra-Nova Research Division might be right for you.")
+                  (h2 "Stats")
+                  (h3 (text rpc/number-of-employees))
+                  (h3 "UEC: " (text rpc/current-money))
+                  (h3 "CS: " (text rpc/current-ship)))
+             (div :class "col-sm-6")
+             (div :class "col-sm-3 time"
+                  (h2 (text rpc/current-date)))))))
+
